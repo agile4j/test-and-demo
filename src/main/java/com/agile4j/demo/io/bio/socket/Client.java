@@ -16,13 +16,14 @@ public class Client {
         String serverHost = "127.0.0.1";
         int serverPort = 9999;
         Socket socket = null;
+        BufferedWriter writer = null;
 
         try {
             socket = new Socket(serverHost, serverPort);
 
             BufferedReader reader = new BufferedReader(
                     new InputStreamReader(socket.getInputStream()));
-            BufferedWriter writer = new BufferedWriter(
+            writer = new BufferedWriter(
                     new OutputStreamWriter(socket.getOutputStream()));
 
             BufferedReader consoleReader = new BufferedReader(
@@ -38,9 +39,10 @@ public class Client {
         } catch (IOException e) {
             e.printStackTrace();
         } finally {
-            if (socket != null) {
+            if (writer != null) {
                 try {
-                    socket.close();
+                    writer.close();
+                    System.out.println("关闭socket");
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
