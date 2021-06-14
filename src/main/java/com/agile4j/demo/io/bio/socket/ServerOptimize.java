@@ -15,7 +15,7 @@ import java.util.Objects;
  */
 public class ServerOptimize {
     public static void main(String[] args) {
-        String quiet = "quiet";
+        String quiet = "quit";
         final int defaultPort = 9999;
         ServerSocket serverSocket = null;
 

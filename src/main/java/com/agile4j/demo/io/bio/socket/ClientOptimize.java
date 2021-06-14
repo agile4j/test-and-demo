@@ -14,7 +14,7 @@ import java.util.Objects;
  */
 public class ClientOptimize {
     public static void main(String[] args) {
-        String quiet = "quiet";
+        String quiet = "quit";
         String serverHost = "127.0.0.1";
         int serverPort = 9999;
         Socket socket = null;
